@@ -7,73 +7,88 @@
 
     <!-- External Libraries -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-    <!-- Custom Stylesheet -->
     <style>
+        /* General Reset */
         body, html {
             margin: 0;
             padding: 0;
             font-family: 'Roboto', sans-serif;
-            background-color: #121212;
             color: #fff;
-            height: 100%;
-        }
-        
-        /* Scroll Animations */
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
+            background-color: #121212;
+            overflow-x: hidden;
         }
 
-        .section {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            text-align: center;
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
         }
 
+        /* Header Section */
         header {
             position: fixed;
             top: 0;
             width: 100%;
-            padding: 10px;
-            background-color: rgba(0, 0, 0, 0.8);
+            padding: 15px;
+            background: transparent;
             z-index: 1000;
+            transition: background 0.3s ease-in-out;
+        }
+
+        header.scrolled {
+            background: rgba(0, 0, 0, 0.8);
         }
 
         header .nav-links {
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
+            gap: 30px;
+            font-family: 'Zilla Slab', serif;
         }
 
         header .nav-links a {
             text-decoration: none;
-            color: #fff;
             font-size: 18px;
-            padding: 15px;
-            font-weight: bold;
+            color: #fff;
+            font-weight: 600;
+            transition: color 0.3s ease, transform 0.3s ease;
         }
 
         header .nav-links a:hover {
-            background-color: #ffcc00;
-            color: #121212;
+            color: #ffcc00;
+            transform: scale(1.1);
         }
 
+        /* Hero Section */
         .hero {
             background: url('https://tr.rbxcdn.com/180DAY-696f26243315a3ee8edaf4f806d27c93/150/150/Image/Webp/noFilter') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
             color: #fff;
-            padding: 100px 20px;
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
-            animation: fadeIn 2s ease-in-out;
+            position: relative;
+            overflow: hidden;
         }
 
-        .section h2 {
-            font-size: 3rem;
+        .hero h2 {
+            font-size: 3.5rem;
+            font-family: 'Zilla Slab', serif;
+            font-weight: 700;
             margin-bottom: 20px;
-            color: #ffcc00;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            max-width: 600px;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
         }
 
         .btn {
@@ -83,64 +98,99 @@
             text-decoration: none;
             font-size: 18px;
             border-radius: 5px;
-            transition: 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
         .btn:hover {
             background-color: #ff9900;
+            transform: scale(1.1);
+        }
+
+        /* Sections */
+        .section {
+            padding: 80px 20px;
+            text-align: center;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .section h2 {
+            font-size: 3rem;
+            color: #ffcc00;
+            margin-bottom: 20px;
         }
 
         .operation-card {
             background-color: rgba(0, 0, 0, 0.7);
             padding: 30px;
-            border-radius: 10px;
+            border-radius: 15px;
             margin: 20px;
             box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
             width: 250px;
             text-align: center;
-            animation: fadeIn 3s ease-out;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .operation-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.7);
         }
 
         .operation-card h3 {
+            font-size: 1.5rem;
             color: #ffcc00;
         }
 
         .operation-card a {
+            display: inline-block;
             color: #fff;
             text-decoration: none;
             font-size: 16px;
             padding: 10px;
             border-radius: 5px;
             background-color: #ff9900;
-            transition: 0.3s ease;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
         }
 
         .operation-card a:hover {
             background-color: #ff6600;
         }
 
+        /* Footer */
         footer {
             background-color: #121212;
+            padding: 30px;
             color: #fff;
-            padding: 50px;
             text-align: center;
         }
 
         footer .social-links a {
-            margin: 0 15px;
             color: #fff;
             font-size: 25px;
+            margin: 10px;
             text-decoration: none;
+            transition: color 0.3s ease;
         }
 
         footer .social-links a:hover {
             color: #ffcc00;
         }
+        
+        /* Parallax Effect */
+        .parallax {
+            background: url('https://example.com/your-parallax-image.jpg') no-repeat center center fixed;
+            background-size: cover;
+            min-height: 500px;
+        }
+        
     </style>
 </head>
 <body>
 
-<header>
+<header id="header">
     <div class="nav-links">
         <a href="#home">Home</a>
         <a href="#join">Join Us</a>
@@ -151,73 +201,57 @@
     </div>
 </header>
 
-<!-- Hero Section -->
 <section class="hero" id="home">
-    <div>
-        <h2>Welcome to the Sunset Insurgency</h2>
-        <p>Your mission, should you choose to accept it, is to destroy the British Army. Join us, and become part of a legacy.</p>
-        <a href="#join" class="btn">Join Now</a>
-    </div>
+    <h2>Welcome to the Sunset Insurgency</h2>
+    <p>Your mission, should you choose to accept it, is to destroy the British Army. Join us, and become part of a legacy.</p>
+    <a href="#join" class="btn">Join Now</a>
 </section>
 
-<!-- Join Us Section -->
 <section id="join" class="section">
-    <div>
-        <h2>Join the Rebellion</h2>
-        <p>All non-BA combat personnel can join the Sunset Insurgency. Join our Roblox group, rank up, and gain powerful weapons and tools.</p>
-        <a href="https://www.roblox.com/communities/32578828/SI-Sunset-Insurgency#!/about" class="btn">Join Sunset Insurgency</a>
-    </div>
+    <h2>Join the Rebellion</h2>
+    <p>All non-BA combat personnel can join the Sunset Insurgency. Join our Roblox group, rank up, and gain powerful weapons and tools.</p>
+    <a href="https://www.roblox.com/communities/32578828/SI-Sunset-Insurgency#!/about" class="btn">Join Sunset Insurgency</a>
 </section>
 
-<!-- Operations Section -->
-<section id="operations" class="section">
+<section id="operations" class="section parallax">
+    <h2>Our Operations</h2>
     <div class="operation-card">
         <h3>Operation Sandhurst Raid</h3>
-        <p>Details: A full-scale raid on Sandhurst Military Academy, our primary target.</p>
-        <a href="#" class="btn">Learn More</a>
+        <p>A full-scale raid on Sandhurst Military Academy, our primary target.</p>
+        <a href="#">Learn More</a>
     </div>
     <div class="operation-card">
         <h3>Operation London Bridge</h3>
-        <p>Details: A massive strike against British Army forces stationed at London Bridge.</p>
-        <a href="#" class="btn">Learn More</a>
+        <p>Massive strike against British Army forces stationed at London Bridge.</p>
+        <a href="#">Learn More</a>
     </div>
 </section>
 
-<!-- News Section -->
 <section id="news" class="section">
-    <div>
-        <h2>Latest News & Updates</h2>
-        <ul>
-            <li>Raid on Sandhurst successful – Full report coming soon!</li>
-            <li>New AKM tools are available for rank-ups!</li>
-            <li>Training sessions this weekend – Don't miss out!</li>
-        </ul>
-    </div>
+    <h2>Latest News & Updates</h2>
+    <ul>
+        <li>Raid on Sandhurst successful – Full report coming soon!</li>
+        <li>New AKM tools are available for rank-ups!</li>
+        <li>Training sessions this weekend – Don't miss out!</li>
+    </ul>
 </section>
 
-<!-- Gallery Section -->
 <section id="gallery" class="section">
+    <h2>Gallery</h2>
+    <p>See our past operations, successful raids, and images from our journey.</p>
     <div>
-        <h2>Gallery</h2>
-        <p>See our past operations, successful raids, and images from our journey.</p>
-        <div>
-            <img src="https://tr.rbxcdn.com/180DAY-696f26243315a3ee8edaf4f806d27c93/150/150/Image/Webp/noFilter" alt="Sunset Insurgency" width="150">
-            <img src="https://tr.rbxcdn.com/180DAY-7c601d9c8fbe76c1f43910cbfff5541c/150/150/Image/Webp/noFilter" alt="Fallen Mafia" width="150">
-        </div>
+        <img src="https://tr.rbxcdn.com/180DAY-696f26243315a3ee8edaf4f806d27c93/150/150/Image/Webp/noFilter" alt="Sunset Insurgency" width="150">
+        <img src="https://tr.rbxcdn.com/180DAY-7c601d9c8fbe76c1f43910cbfff5541c/150/150/Image/Webp/noFilter" alt="Fallen Mafia" width="150">
     </div>
 </section>
 
-<!-- Contact Section -->
 <section id="contact" class="section">
-    <div>
-        <h2>Contact Us</h2>
-        <p>Get in touch via Discord and other channels:</p>
-        <p>Discord: <a href="https://discord.gg/Cg7vXHnbCP" target="_blank">Fallen Mafia Discord</a></p>
-        <p>Enemy Discord: <a href="https://discord.gg/BritishArmy" target="_blank">British Army Discord</a></p>
-    </div>
+    <h2>Contact Us</h2>
+    <p>Get in touch via Discord and other channels:</p>
+    <p>Discord: <a href="https://discord.gg/Cg7vXHnbCP" target="_blank">Fallen Mafia Discord</a></p>
+    <p>Enemy Discord: <a href="https://discord.gg/BritishArmy" target="_blank">British Army Discord</a></p>
 </section>
 
-<!-- Footer -->
 <footer>
     <p>© 2025 Sunset Insurgency. All Rights Reserved.</p>
     <div class="social-links">
@@ -230,6 +264,16 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script>
     AOS.init();
+
+    // Add the scroll effect for the header
+    window.onscroll = function() {
+        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+            document.getElementById("header").classList.add("scrolled");
+        } else {
+            document.getElementById("header").classList.remove("scrolled");
+        }
+    };
 </script>
+
 </body>
 </html>
