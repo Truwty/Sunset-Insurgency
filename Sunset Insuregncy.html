@@ -90,11 +90,13 @@
             text-decoration: none;
             font-size: 18px;
             border-radius: 5px;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 10px rgba(255, 204, 0, 0.5);
         }
 
         .btn:hover {
             background-color: #ff9900;
+            transform: scale(1.05);
         }
 
         /* Sections */
@@ -116,7 +118,7 @@
             border-radius: 10px;
         }
 
-        .join-form input, .join-form textarea {
+        .join-form input {
             width: 100%;
             padding: 10px;
             margin: 10px 0;
@@ -128,7 +130,8 @@
             background-color: #ffcc00;
             color: #121212;
             border: none;
-            padding: 10px border-radius: 5px;
+            padding: 10px;
+            border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
@@ -156,6 +159,42 @@
 
         .operation-card:hover {
             transform: scale(1.05);
+        }
+
+        /* Enemies and Allies Section */
+        .faction-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 40px 0;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .faction-logo {
+            width: 100px;
+            margin-right: 20px;
+        }
+
+        /* Calendar Section */
+        .calendar {
+            margin-top: 40px;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .calendar h2 {
+            margin-bottom: 20px;
+        }
+
+        .calendar input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
         }
 
         /* Gallery Section */
@@ -234,21 +273,22 @@
         <a href="#operations">Operations</a>
         <a href="#gallery">Gallery</a>
         <a href="#news">News</a>
+        <a href="#enemies">Enemies</a>
+        <a href="#allies">Allies</a>
+        <a href="#calendar">Calendar</a>
     </nav>
 </header>
 
 <section class="hero" id="hero">
     <h1>Welcome to Sunset Insurgency</h1>
     <p>Join us in our mission to create a better future.</p>
-    <a href="#join" class="btn">Join Us</a>
+    <a href="https://www.roblox.com/communities/32578828/SI-Sunset-Insurgency#!/about" class="btn">Join Us</a>
 </section>
 
 <section class="section" id="join">
     <h2>Join Us</h2>
     <div class="join-form">
         <input type="text" placeholder="Your Name" required>
-        <input type="email" placeholder="Your Email" required>
-        <textarea placeholder="Why do you want to join?" required></textarea>
         <button type="submit">Apply Now</button>
     </div>
 </section>
@@ -263,6 +303,34 @@
         <div class="operation-card">
             <h3>Operation Beta</h3>
             <p>Details about Operation Beta.</p>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="enemies">
+    <h2>Enemies</h2>
+    <div class="faction-section">
+        <img src="https://example.com/enemy-logo.jpg" alt="Enemy Logo" class="faction-logo">
+        <p>Description of the enemy faction.</p>
+    </div>
+</section>
+
+<section class="section" id="allies">
+    <h2>Allies</h2>
+    <div class="faction-section">
+        <img src="https://example.com/ally-logo.jpg" alt="Ally Logo" class="faction-logo">
+        <p>Description of the ally faction.</p>
+    </div>
+</section>
+
+<section class="section" id="calendar">
+    <h2>Event Calendar</h2>
+    <div class="calendar">
+        <input type="text" placeholder="Enter password to view events" id="calendar-password">
+        <button onclick="checkPassword()">View Events</button>
+        <div id="event-list" style="display:none;">
+            <h3>Upcoming Events</h3>
+            <p>No events scheduled.</p>
         </div>
     </div>
 </section>
@@ -286,13 +354,14 @@
             <h4>Join Us for Training</h4>
             <p>Details about the upcoming training session.</p>
         </div>
-    </div </section>
+    </div>
+</section>
 
 <button class="toggle-button" onclick="toggleMode()">Toggle Dark/Light Mode</button>
 
 <footer>
     <p>&copy; 2023 Sunset Insurgency. All rights reserved.</p>
-    <p>Join our groups: <a href="https://www.roblox.com/communities/32578828/SI-Sunset-Insurgency#!/about">Sunset Group</a> | <a href="https://www.roblox.com/communities/7704603/Fallen-Mafia#!/about">Fallen Mafia</a></p>
+    <p>Join our groups: <a href="https://www.roblox.com/communities/32578828/SI-Sunset-Ins urgency#!/about">Sunset Group</a> | <a href="https://www.roblox.com/communities/7704603/Fallen-Mafia#!/about">Fallen Mafia</a></p>
     <p>Discord Links: <a href="https://discord.gg/Cg7vXHnbCP">Fallen Mafia Discord</a> | <a href="https://discord.gg/BritishArmy">Enemies Discord</a></p>
 </footer>
 
@@ -304,6 +373,18 @@
 
     function toggleMode() {
         document.body.classList.toggle('light-mode');
+    }
+
+    function checkPassword() {
+        const password = document.getElementById('calendar-password').value;
+        const eventList = document.getElementById('event-list');
+        if (password === 'Kingpin') {
+            eventList.style.display = 'block';
+            eventList.innerHTML = '<h3>Upcoming Events</h3><p>Event 1: Training Session on Saturday</p><p>Event 2: Raid on Sunday</p>';
+        } else {
+            alert('Incorrect password. Please try again.');
+            eventList.style.display = 'none';
+        }
     }
 </script>
 </body>
