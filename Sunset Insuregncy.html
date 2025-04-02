@@ -17,7 +17,7 @@
             transition: background 0.3s, color 0.3s;
         }
         header {
-            background: #b80000;
+            background: #b80000; /* Changed to gold */
             color: white;
             padding: 20px;
             font-size: 28px;
@@ -49,7 +49,7 @@
             transition: background 0.3s, transform 0.2s;
         }
         nav ul li:hover {
-            background: #b80000;
+            background: #b80000; /* Changed to gold */
             color: white;
             transform: scale(1.1);
         }
@@ -79,7 +79,7 @@
         .link-button {
             display: inline-block;
             margin: 10px 0;
-            background: #b80000;
+            background: #b80000; /* Changed to gold */
             color: white;
             padding: 15px 25px;
             text-decoration: none;
@@ -89,7 +89,7 @@
             transition: background 0.3s, transform 0.2s;
         }
         .link-button:hover {
-            background: #900000;
+            background: #900000; /* Darker gold */
             transform: scale(1.05);
         }
         .faction-container {
@@ -117,7 +117,7 @@
             transform: scale(1.05);
         }
         .faction img {
-            width: 100px;
+            width: 100 px;
             height: 100px;
             object-fit: cover;
             border-radius: 5px;
@@ -130,7 +130,7 @@
             font-size: 16px;
         }
         .faction a:hover {
-            color: #900000;
+            color: #900000; /* Darker gold */
         }
         .calendar {
             margin-top: 40px;
@@ -149,7 +149,7 @@
             border-radius: 5px;
         }
         .calendar button {
-            background: #b80000;
+            background: #b80000; /* Changed to gold */
             color: white;
             padding: 10px 15px;
             border: none;
@@ -158,46 +158,22 @@
             transition: background 0.3s;
         }
         .calendar button:hover {
-            background: #900000;
+            background: #900000; /* Darker gold */
         }
-        .article-preview-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 40px;
-        }
-        .article-preview {
-            background: #f9f9f9;
+        .info-container {
+            display: none;
+            transition: transform 0.5s ease;
+            margin-top: 20px;
+            background: rgba(255, 255, 255, 0.1);
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            width: 300px;
-            transition: transform 0.3s;
         }
-        .article-preview:hover {
-            transform: scale(1.02);
+        .slide-in {
+            display: block;
+            transform: translateX(0);
         }
-        .article-preview img {
-            width: 100%;
-            height: auto;
-            max-height: 150px;
-            object-fit: cover;
-            margin-bottom: 10px;
-        }
-        .article-preview h3 {
-            color: #b80000;
-            font-size: 20px;
-            margin: 10px 0;
-        }
-        .article-preview p {
-            font-size: 16px;
-            color: #333;
-        }
-        .no-articles {
-            font-size: 20px;
-            color: #333;
-            margin-top: 20px;
+        .slide-out {
+            transform: translateX(-100%);
         }
 
         /* Animations */
@@ -241,14 +217,26 @@
 
         <!-- Faction Section -->
         <div class="faction-container active" id="faction-container">
-            <div class="faction">
+            <div class="faction" onclick="toggleInfo('sunset-info')">
                 <img src="https://tr.rbxcdn.com/180DAY-696f26243315a3ee8edaf4f806d27c93/150/150/Image/Webp/noFilter" alt="Sunset Insurgency Logo">
-                <a href="https://www.roblox.com/communities/32578828/SI-Sunset-Insurgency#!/about">Sunset Insurgency</a>
+                <a href="#">Sunset Insurgency</a>
             </div>
-            <div class="faction">
+            <div class="faction" onclick="toggleInfo('fallen-info')">
                 <img src="https://tr.rbxcdn.com/180DAY-7c601d9c8fbe76c1f43910cbfff5541c/150/150/Image/Webp/noFilter" alt="Fallen Mafia Logo">
-                <a href="https://www.roblox.com/communities/7704603/Fallen-Mafia#!/about">Fallen Mafia</a>
+                <a href="#">Fallen Mafia</a>
             </div>
+        </div>
+
+        <!-- Info Containers -->
+        <div id="sunset-info" class="info-container slide-out">
+            <h3>Sunset Insurgency Details</h3>
+            <p> The Sunset Insurgency is a powerful faction focused on dismantling the British Army's influence. We are committed to our cause and welcome all who share our vision.</p>
+            <a class="link-button" href="https://www.roblox.com/communities/32578828/SI-Sunset-Insurgency#!/about">Learn More</a>
+        </div>
+        <div id="fallen-info" class="info-container slide-out">
+            <h3>Fallen Mafia Details</h3>
+            <p>The Fallen Mafia is an ally faction that supports our mission. Together, we aim to achieve our goals and expand our influence.</p>
+            <a class="link-button" href="https://www.roblox.com/communities/7704603/Fallen-Mafia#!/about">Learn More</a>
         </div>
 
         <!-- Enemies Section -->
@@ -262,17 +250,12 @@
         <!-- Calendar Section -->
         <div class="calendar" id="calendar">
             <h2>Event Calendar</h2>
-            <input type="text" placeholder="Enter password to view events" id="calendar-password">
-            <button onclick="checkPassword()">View Events</button>
+            <input type="text" placeholder="Enter password to add events" id="calendar-password">
+            <button onclick="checkPassword()">Add Event</button>
             <div id="event-list" style="display:none;">
                 <h3>Upcoming Events</h3>
                 <p>No events scheduled.</p>
             </div>
-        </div>
-
-        <!-- Articles Section -->
-        <div class="article-preview-container" id="article-preview-container">
-            <p class="no-articles">No current articles</p>
         </div>
     </div>
 
@@ -288,56 +271,28 @@
     function checkPassword() {
         const password = document.getElementById('calendar-password').value;
         if (password === 'Kingpin') {
-            eventList.style.display = 'block';
-            eventList.innerHTML = '<h3>Upcoming Events</h3><p>Event 1: Training Session on Saturday</p><p>Event 2: Raid on Sunday</p>';
+            hasAccess = true;
+            alert('Access granted. You can now add events.');
         } else {
             alert('Incorrect password. Please try again.');
-            eventList.style.display = 'none';
         }
     }
 
-    // Load saved articles on page load
-    window.onload = function () {
-        displayArticles();
-    };
+    // Toggle Info Display
+    function toggleInfo(infoId) {
+        const infoContainer = document.getElementById(infoId);
+        const isVisible = infoContainer.classList.contains('slide-in');
 
-    function displayArticles() {
-        let articles = JSON.parse(localStorage.getItem('articles')) || [];
-        const articlePreviewContainer = document.getElementById('article-preview-container');
-        articlePreviewContainer.innerHTML = '';
-
-        if (articles.length === 0) {
-            articlePreviewContainer.innerHTML = `<p class="no-articles">No current articles</p>`;
-            return;
-        }
-
-        articles.forEach((article, index) => {
-            let articleElement = document.createElement('div');
-            articleElement.classList.add('article-preview');
-
-            if (article.image) {
-                articleElement.innerHTML += `<img src="${article.image}" alt="Article Image" style="width: 100%; height: auto; border-radius: 10px; margin-bottom: 10px;">`;
-            }
-            
-            articleElement.innerHTML += `
-                <h3>Article ${index + 1}</h3>
-                <p style="white-space: pre-line;">${article.content}</p>
-                <button onclick="deleteArticle(${index})">Delete</button>
-            `;
-
-            articlePreviewContainer.appendChild(articleElement);
+        // Slide out all info containers
+        document.querySelectorAll('.info-container').forEach(container => {
+            container.classList.remove('slide-in');
+            container.classList.add('slide-out');
         });
-    }
 
-    function deleteArticle(index) {
-        let password = prompt("Enter the password to delete this article:");
-        if (password === "Kingpin") {
-            let articles = JSON.parse(localStorage.getItem('articles')) || [];
-            articles.splice(index, 1);
-            localStorage.setItem('articles', JSON.stringify(articles));
-            displayArticles();
-        } else {
-            alert("Incorrect password. Article not deleted.");
+        // Slide in the selected info container
+        if (!isVisible) {
+            infoContainer.classList.remove('slide-out');
+            infoContainer.classList.add('slide-in');
         }
     }
 </script>
