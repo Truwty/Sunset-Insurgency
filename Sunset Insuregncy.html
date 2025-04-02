@@ -125,7 +125,7 @@
         }
 
         .operation-card {
-            background-color: rgba(0, 0, 0, 0 .7);
+            background-color: rgba(0, 0, 0 , 0.7);
             border-radius: 10px;
             padding: 20px;
             margin: 20px;
@@ -147,6 +147,7 @@
         .gallery img {
             width: 100%;
             border-radius: 10px;
+            cursor: pointer;
             transition: transform 0.3s ease;
         }
 
@@ -160,8 +161,27 @@
         }
 
         .video-container video {
-            width: 100%;
+            width: 80%; /* Adjusted size */
             border-radius: 10px;
+        }
+
+        /* Information Section */
+        .info-section {
+            padding: 40px 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            margin-top: 40px;
+        }
+
+        .info-section h2 {
+            font-size: 2.5rem;
+            color: #ffcc00;
+            margin-bottom: 20px;
+        }
+
+        .info-section p {
+            font-size: 1.1rem;
+            line-height: 1.6;
         }
 
         /* Footer */
@@ -179,6 +199,7 @@
         <a href="#hero">Home</a>
         <a href="#gallery">Gallery</a>
         <a href="#video">Video</a>
+        <a href="#info">Information</a>
         <a href="#contact">Contact</a>
     </nav>
 </header>
@@ -192,21 +213,35 @@
 <section class="section" id="gallery">
     <h2>Gallery</h2>
     <div class="gallery">
-        <img src="https://media.discordapp.net/attachments/1124560566514634843/1328838559477534810/Screenshot_2025-01-14_at_21.28.58.png?ex=67ee5519&is=67ed0399&hm=6bd6828742083d77823e48aa09ac190c13c3e65ae958de6dced0e45ca5f745a5&=&format=webp&quality=lossless&width=1443&height=902" alt="Gallery Image 1">
-        <img src="https://media.discordapp.net/attachments/1124560566514634843/1328059847312408598/image.png?ex=67eecb9d&is=67ed7a1d&hm=a574417d91e5d7b5271643ef6516d8331cbae2e9546f5ac596fbe627958ebab1&=&format=webp&quality=lossless" alt="Gallery Image 2">
+        <a href="https://media.discordapp.net/attachments/1124560566514634843/1328838559477534810/Screenshot_2025-01-14_at_21.28.58.png?ex=67ee5519&is=67ed0399&hm=6bd6828742083d77823e48aa09ac190c13c3e65ae958de6dced0e45ca5f745a5&=&format=webp&quality=lossless&width=1443&height=902">
+            <img src="https://media.discordapp.net/attachments/1124560566514634843/1328838559477534810/Screenshot_2025-01-14_at_21.28.58.png?ex=67ee5519&is=67ed0399&hm=6bd6828742083d77823e48aa09ac190c13c3e65ae958de6dced0e45ca5f745a5&=&format=webp&quality=lossless&width=1443&height=902" alt="Gallery Image 1">
+        </a>
+        <a href="https://media.discordapp.net/attachments/1124560566514634843/1328059847312408598/image.png?ex=67eecb9d&is=67ed7a1d&hm=a574417d91e5d7b5271643ef6516d8331cbae2e9546f5ac596fbe627958ebab1&=&format=webp&quality=lossless">
+            <img src="https://media.discordapp.net/attachments/1124560566514634843/1328059847312408598/image.png?ex=67eecb9d&is=67ed7a1d&hm=a574417d91e5d7b5271643ef6516d8331cbae2e9546f5ac596fbe627958ebab1&=&format=webp&quality=lossless" alt="Gallery Image 2">
+        </a>
     </div>
 </section>
 
 <section class="video-container" id="video">
     <h2>Featured Video</h2>
     <video controls>
-        <source src="https://cdn.discordapp.com/attachments/1216490390098808992/1357091467121786984/copy_56592521-1A89-4E68-8D12-08E87E09BAD0.mov?ex=67eef16b&is=67ed9feb&hm=c5f6f1fdbe6ad65eb49733c83d25d626cd1fd474f72e55af0b0277d4f920c782&" type="video/mp4">
+        <source src ="https://cdn.discordapp.com/attachments/1216490390098808992/1357091467121786984/copy_56592521-1A89-4E68-8D12-08E87E09BAD0.mov?ex=67eef16b&is=67ed9feb&hm=c5f6f1fdbe6ad65eb49733c83d25d626cd1fd474f72e55af0b0277d4f920c782&" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 </section>
 
+<section class="info-section" id="info">
+    <h2>Sunset Insurgency Information</h2>
+    <p><strong>🌄 About Us:</strong> The Sunset Insurgency is a rebellion force dedicated to the complete annihilation of the British Army. Our primary target is Sandhurst Military Academy - their premier training and operations center.</p>
+    <p><strong>🌅 How to Join:</strong> All non-BA combat personnel can join the Sunset Insurgency. Simply join the group to gain team access. To get access to weaponry, you must rank up once! You must be in the communications server found via the social links to attend a training.</p>
+    <p><strong>☀️ Information:</strong> Trainings are hosted in the British Army subway, our base. Combat-regimental personnel and HRs of any regiment may not join. There are NO quotas or activity requirements for Sunset Insurgency LRs. Anyone can join the group, but they will not receive tools until they rank up. Every rank up receives a new tool/perk. Sunset Insurgency HRs do not receive admin permissions in-game.</p>
+    <p><strong>Why Join Sunset Insurgency?</strong> Anyone can join, including BA personnel and BA High Ranks! No tryouts needed! (This excludes those in combative regiments). No quotas unless you're a high rank! Stay as long as you like, and be as inactive as you like! We don't care! This also means that there are no discharge requests! Come and leave as you please. Free tools! Every training you pass = a rank up. For every rank up, you'll get a new tool. Everything from an AKM, Medkit, Motorbike, AWM (Sniper), and more! Unity & Maturity. We strive to reflect the values of STRONGER TOGETHER! This means respect, sportsmanship, and teamwork. No BOP for High Ranks! If you want to be a High Rank, then all you need to do is meet the basic requirements and apply. Fun! Our primary objective is to have fun. We inherently make Sandhurst a more fun game by taking part in raids and battles against combative regiments. The Sunset Insurgency is an opportunity to try out the "bad guy" life. Join us for a casual but regulated experience. You can always leave if it's not right for you!</p>
+</section>
+
 <footer>
     <p>&copy; 2023 Sunset Insurgency. All rights reserved.</p>
+    <p>Join our groups: <a href="https://www.roblox.com/communities/32578828/SI-Sunset-Insurgency#!/about">Sunset Group</a> | <a href="https://www.roblox.com/communities/7704603/Fallen-Mafia#!/about">Fallen Mafia</a></p>
+    <p>Discord Links: <a href="https://discord.gg/Cg7vXHnbCP">Fallen Mafia Discord</a> | <a href="https://discord.gg/BritishArmy">Enemies Discord</a></p>
 </footer>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
