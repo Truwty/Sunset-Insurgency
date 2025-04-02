@@ -1,47 +1,60 @@
-Sure! Below is an example of an advanced HTML code for a website that showcases the information you provided about the Sunset Insurgency, Fallen Mafia, and their enemies. This code includes sections for each group, their logos, links, and a styled layout using CSS.
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roblox Groups</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Roblox Groups Overview</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
+            background-color: #1a1a1a;
+            color: #fff;
             margin: 0;
             padding: 0;
         }
         header {
             background: #333;
-            color: #fff;
+            color: #FFD700; /* Gold */
             padding: 10px 0;
             text-align: center;
         }
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
+        .tab {
+            display: flex;
+            justify-content: center;
+            background-color: #444;
+            border-bottom: 2px solid #FFD700; /* Gold */
         }
-        section {
-            background: #fff;
-            margin: 20px 0;
+        .tab button {
+            background-color: #333;
+            color: #FFD700; /* Gold */
+            border: none;
+            padding: 14px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 16px;
+        }
+        .tab button:hover {
+            background-color: #555;
+        }
+        .tabcontent {
+            display: none;
             padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #222;
+            animation: fadeIn 0.5s;
         }
-        h2 {
-            color: #333;
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .active {
+            display: block;
         }
         img {
             max-width: 150px;
             margin: 10px 0;
         }
         a {
-            color: #007BFF;
+            color: #FFD700; /* Gold */
             text-decoration: none;
         }
         a:hover {
@@ -51,7 +64,7 @@ Sure! Below is an example of an advanced HTML code for a website that showcases 
             text-align: center;
             padding: 10px 0;
             background: #333;
-            color: #fff;
+            color: #FFD700; /* Gold */
             position: relative;
             bottom: 0;
             width: 100%;
@@ -64,34 +77,55 @@ Sure! Below is an example of an advanced HTML code for a website that showcases 
     <h1>Roblox Groups Overview</h1>
 </header>
 
-<div class="container">
+<div class="tab">
+    <button class="tablinks" onclick="openTab(event, 'SunsetInsurgency')">Sunset Insurgency</button>
+    <button class="tablinks" onclick="openTab(event, 'FallenMafia')">Fallen Mafia</button>
+    <button class="tablinks" onclick="openTab(event, 'Enemies')">Enemies</button>
+</div>
 
-    <section id="sunset-insurgency">
-        <h2>Sunset Insurgency</h2>
-        <img src="https://tr.rbxcdn.com/180DAY-696f26243315a3ee8edaf4f806d27c93/150/150/Image/Webp/noFilter" alt="Sunset Insurgency Logo">
-        <p><strong>Colors:</strong> Yellow, Gold, Black</p>
-        <p><strong>About:</strong> The Sunset Insurgency is a rebellion force dedicated to the complete annihilation of the British Army. Our primary target is Sandhurst Military Academy - their premier training and operations center.</p>
-        <p><strong>How to Join:</strong> All non-BA combat personnel can join. Simply join the group to gain team access. To get access to weaponry, you must rank up once!</p>
-        <p><strong>Group Link:</strong> <a href="https://www.roblox.com/communities/32578828/SI-Sunset-Insurgency#!/about" target="_blank">Join Sunset Insurgency</a></p>
-        <p><strong>Discord:</strong> "Prove yourself worthy of joining us"</p>
-    </section>
+<div id="SunsetInsurgency" class="tabcontent">
+    <h2>Sunset Insurgency</h2>
+    <img src="https://tr.rbxcdn.com/180DAY-696f26243315a3ee8edaf4f806d27c93/150/150/Image/Webp/noFilter" alt="Sunset Insurgency Logo">
+    <p><strong>Colors:</strong> Yellow, Gold, Black</p>
+    <p><strong>About:</strong> The Sunset Insurgency is a rebellion force dedicated to the complete annihilation of the British Army. Our primary target is Sandhurst Military Academy - their premier training and operations center.</p>
+    <p><strong>How to Join:</strong> All non-BA combat personnel can join. Simply join the group to gain team access. To get access to weaponry, you must rank up once!</p>
+    <p><strong>Group Link:</strong> <a href="https://www.roblox.com/communities/32578828/SI-Sunset-Insurgency#!/about" target="_blank">Join Sunset Insurgency</a></p>
+    <p><strong>Discord:</strong> "Prove yourself worthy of joining us"</p>
+</div>
 
-    <section id="fallen-mafia">
-        <h2>Fallen Mafia</h2>
-        <img src="https://tr.rbxcdn.com/180DAY-7c601d9c8fbe76c1f43910cbfff5541c/150/150/Image/Webp/noFilter" alt="Fallen Mafia Logo">
-        <p><strong>About:</strong> The Fallen Mafia is an ally of the Sunset Insurgency.</p>
-        <p><strong>Group Link:</strong> <a href="https://www.roblox.com/communities/7704603/Fallen-Mafia#!/about" target="_blank">Join Fallen Mafia</a></p>
-        <p><strong>Discord:</strong> <a href="https://discord.gg/Cg7vXHnbCP" target="_blank">Join Fallen Mafia Discord</a></p>
-    </section>
+<div id="FallenMafia" class="tabcontent">
+    <h2>Fallen Mafia</h2>
+    <img src="https://tr.rbxcdn.com/180DAY-7c601d9c8fbe76c1f43910cbfff5541c/150/150/Image/Webp/noFilter" alt="Fallen Mafia Logo">
+    <p><strong>About:</strong> The Fallen Mafia is an ally of the Sunset Insurgency.</p>
+    <p><strong>Group Link:</strong> <a href="https://www.roblox.com/communities/7704603/Fallen-Mafia#!/about" target="_blank">Join Fallen Mafia</a></p>
+    <p><strong>Discord :</strong> "Join us for exclusive updates and events!"</p>
+</div>
 
-    <section id="enemies">
-        <h2>Enemies</h2>
-        <img src="https://tr.rbxcdn.com/180DAY-0dc71758504a3063460086b8b29b0de8/150/150/Image/Webp/noFilter" alt="British Army Logo">
-        <p><strong>Name:</strong> ReaperMah's British Army</p>
-        <p><strong>Discord:</strong> <a href="https://discord.gg/BritishArmy" target="_blank">Join British Army Discord</a></p>
-    </section>
-
+<div id="Enemies" class="tabcontent">
+    <h2>Enemies</h2>
+    <p><strong>Current Enemies:</strong> British Army, Sandhurst Military Academy</p>
+    <p><strong>Strategy:</strong> Engage in tactical warfare and espionage to undermine enemy operations.</p>
 </div>
 
 <footer>
-    <p>&copy; 2023 Roblox Groups Overview</p
+    <p>&copy; 2023 Roblox Groups Overview. All rights reserved.</p>
+</footer>
+
+<script>
+    function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";  
+        }
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+        document.getElementById(tabName).style.display = "block";  
+        evt.currentTarget.className += " active";
+    }
+</script>
+
+</body>
+</html>
