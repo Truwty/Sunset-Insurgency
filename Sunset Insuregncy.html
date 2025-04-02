@@ -126,157 +126,95 @@
 
         .operation-card {
             background-color: rgba(0, 0, 0, 0 .7);
-            padding: 30px;
-            border-radius: 15px;
+            border-radius: 10px;
+            padding: 20px;
             margin: 20px;
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
-            width: 250px;
-            text-align: center;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            transition: transform 0.3s ease;
         }
 
         .operation-card:hover {
             transform: scale(1.05);
-            box-shadow: 0 0 25px rgba(255, 255, 255, 0.7);
         }
 
-        .operation-card h3 {
-            font-size: 1.5rem;
-            color: #ffcc00;
+        /* Gallery Section */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 15px;
+            margin-top: 40px;
         }
 
-        .operation-card a {
-            display: inline-block;
-            color: #fff;
-            text-decoration: none;
-            font-size: 16px;
-            padding: 10px;
-            border-radius: 5px;
-            background-color: #ff9900;
-            margin-top: 10px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
+        .gallery img {
+            width: 100%;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
         }
 
-        .operation-card a:hover {
-            background-color: #ff6600;
+        .gallery img:hover {
             transform: scale(1.05);
+        }
+
+        /* Video Section */
+        .video-container {
+            margin-top: 40px;
+        }
+
+        .video-container video {
+            width: 100%;
+            border-radius: 10px;
         }
 
         /* Footer */
         footer {
-            background-color: #121212;
-            padding: 30px;
-            color: #fff;
             text-align: center;
+            padding: 20px;
+            background-color: #1a1a1a;
         }
-
-        footer .social-links a {
-            color: #fff;
-            font-size: 25px;
-            margin: 10px;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        footer .social-links a:hover {
-            color: #ffcc00;
-        }
-        
-        /* Parallax Effect */
-        .parallax {
-            background: url('https://example.com/your-parallax-image.jpg') no-repeat center center fixed;
-            background-size: cover;
-            min-height: 500px;
-        }
-        
     </style>
 </head>
 <body>
 
-<header id="header">
-    <div class="nav-links">
-        <a href="#home">Home</a>
-        <a href="#join">Join Us</a>
-        <a href="#operations">Operations</a>
-        <a href="#news">News & Events</a>
+<header>
+    <nav class="nav-links">
+        <a href="#hero">Home</a>
         <a href="#gallery">Gallery</a>
+        <a href="#video">Video</a>
         <a href="#contact">Contact</a>
-    </div>
+    </nav>
 </header>
 
-<section class="hero" id="home">
-    <h2>Welcome to the Sunset Insurgency</h2>
-    <p>Your mission, should you choose to accept it, is to destroy the British Army. Join us, and become part of a legacy.</p>
-    <a href="#join" class="btn">Join Now</a>
+<section class="hero" id="hero">
+    <h2>Welcome to Sunset Insurgency</h2>
+    <p>Experience the beauty of nature and adventure like never before.</p>
+    <a href="#gallery" class="btn">Explore Gallery</a>
 </section>
 
-<section id="join" class="section">
-    <h2>Join the Rebellion</h2>
-    <p>All non-BA combat personnel can join the Sunset Insurgency. Join our Roblox group, rank up, and gain powerful weapons and tools.</p>
-    <a href="https://www.roblox.com/communities/32578828/SI-Sunset-Insurgency#!/about" class="btn">Join Sunset Insurgency</a>
-</section>
-
-<section id="operations" class="section parallax">
-    <h2>Our Operations</h2>
-    <div class="operation-card">
-        <h3>Operation Sandhurst Raid</h3>
-        <p>A full-scale raid on Sandhurst Military Academy, our primary target.</p>
-        <a href="#">Learn More</a>
-    </div>
-    <div class="operation-card">
-        <h3>Operation London Bridge</h3>
-        <p>Massive strike against British Army forces stationed at London Bridge.</p>
-        <a href="#">Learn More</a>
-    </div>
-</section>
-
-<section id="news" class="section">
-    <h2>Latest News & Updates</h2>
-    <ul>
-        <li>Raid on Sandhurst successful – Full report coming soon!</li>
-        <li>New AKM tools are available for rank-ups!</li>
-        <li>Training sessions this weekend – Don't miss out!</li>
-    </ul>
-</section>
-
-<section id="gallery" class="section">
+<section class="section" id="gallery">
     <h2>Gallery</h2>
-    <p>See our past operations, successful raids, and images from our journey.</p>
-    <div>
-        <img src="https://tr.rbxcdn.com/180DAY-696f26243315a3ee8edaf4f806d27c93/150/150/Image/Webp/noFilter" alt="Sunset Insurgency" width="150">
-        <img src="https://tr.rbxcdn.com/180DAY-7 c601d9c8fbe76c1f43910cbfff5541c/150/150/Image/Webp/noFilter" alt="Fallen Mafia" width="150">
+    <div class="gallery">
+        <img src="https://media.discordapp.net/attachments/1124560566514634843/1328838559477534810/Screenshot_2025-01-14_at_21.28.58.png?ex=67ee5519&is=67ed0399&hm=6bd6828742083d77823e48aa09ac190c13c3e65ae958de6dced0e45ca5f745a5&=&format=webp&quality=lossless&width=1443&height=902" alt="Gallery Image 1">
+        <img src="https://media.discordapp.net/attachments/1124560566514634843/1328059847312408598/image.png?ex=67eecb9d&is=67ed7a1d&hm=a574417d91e5d7b5271643ef6516d8331cbae2e9546f5ac596fbe627958ebab1&=&format=webp&quality=lossless" alt="Gallery Image 2">
     </div>
 </section>
 
-<section id="contact" class="section">
-    <h2>Contact Us</h2>
-    <p>Get in touch via Discord and other channels:</p>
-    <p>Discord: <a href="https://discord.gg/Cg7vXHnbCP" target="_blank">Fallen Mafia Discord</a></p>
-    <p>Enemy Discord: <a href="https://discord.gg/BritishArmy" target="_blank">British Army Discord</a></p>
+<section class="video-container" id="video">
+    <h2>Featured Video</h2>
+    <video controls>
+        <source src="https://cdn.discordapp.com/attachments/1216490390098808992/1357091467121786984/copy_56592521-1A89-4E68-8D12-08E87E09BAD0.mov?ex=67eef16b&is=67ed9feb&hm=c5f6f1fdbe6ad65eb49733c83d25d626cd1fd474f72e55af0b0277d4f920c782&" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
 </section>
 
 <footer>
-    <p>© 2025 Sunset Insurgency. All Rights Reserved.</p>
-    <div class="social-links">
-        <a href="https://discord.gg/" target="_blank"><i class="fab fa-discord"></i></a>
-        <a href="https://www.roblox.com/" target="_blank"><i class="fab fa-roblox"></i></a>
-    </div>
+    <p>&copy; 2023 Sunset Insurgency. All rights reserved.</p>
 </footer>
 
-<!-- Scripts -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script>
-    AOS.init();
-
-    // Add the scroll effect for the header
-    window.onscroll = function() {
-        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-            document.getElementById("header").classList.add("scrolled");
-        } else {
-            document.getElementById("header").classList.remove("scrolled");
-        }
-    };
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('header');
+        header.classList.toggle('scrolled', window.scrollY > 0);
+    });
 </script>
-
 </body>
 </html>
