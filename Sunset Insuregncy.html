@@ -11,9 +11,10 @@
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(to right, #ffffff, #f2f2f2);
-            color: #333;
+            background: linear-gradient(to right, #121212, #1a1a1a);
+            color: #f0d100; /* Gold color */
             text-align: center;
+            transition: background 0.3s, color 0.3s;
         }
         header {
             background: #b80000;
@@ -24,7 +25,7 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
         nav {
-            background: white;
+            background: #1a1a1a;
             padding: 15px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             position: sticky;
@@ -59,7 +60,7 @@
             margin-bottom: 40px;
             padding: 20px;
             font-size: 24px;
-            background: #f2f2f2;
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             animation: fadeIn 0.5s ease-in-out;
@@ -67,7 +68,7 @@
         .links-container {
             margin-top: 40px;
             padding: 20px;
-            background: #ffffff;
+            background: rgba(255, 255, 255, 0.1);
             border-radius: 10px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
@@ -104,7 +105,7 @@
             opacity: 1;
         }
         .faction {
-            background: #f2f2f2;
+            background: rgba(255, 255, 255, 0.1);
             padding: 20px;
             border-radius: 10px;
             text-align: center;
@@ -123,7 +124,7 @@
             margin-bottom: 10px;
         }
         .faction a {
-            color: #b80000;
+            color: #f0d100; /* Gold color */
             font-weight: bold;
             text-decoration: none;
             font-size: 16px;
@@ -133,7 +134,7 @@
         }
         .calendar {
             margin-top: 40px;
-            background: #f2f2f2;
+            background: rgba(255, 255, 255, 0.1);
             padding: 20px;
             border-radius: 10px;
         }
@@ -220,8 +221,6 @@
     <nav>
         <ul>
             <li class="home-tab">Home</li>
-            <li class="article-tab">Articles</li>
-            <li id="regiment-tab">Regiments</li>
             <li class="calendar-tab">Calendar</li>
         </ul>
     </nav>
@@ -240,15 +239,23 @@
             <a class="link-button" href="https://www.roblox.com/communities/7704603/Fallen-Mafia#!/about" target="_blank"><i class="fas fa-users"></i> Visit Fallen Mafia</a>
         </div>
 
-        <!-- Enemies and Allies Section -->
+        <!-- Faction Section -->
         <div class="faction-container active" id="faction-container">
             <div class="faction">
-                <img src="https://tr.rbxcdn.com/180DAY-0dc71758504a3063460086b8b29b0de8/150/150/Image/Webp/noFilter" alt="ReaperMah's British Army Logo">
-                <a href="https://discord.gg/BritishArmy">ReaperMah's British Army</a>
+                <img src="https://tr.rbxcdn.com/180DAY-696f26243315a3ee8edaf4f806d27c93/150/150/Image/Webp/noFilter" alt="Sunset Insurgency Logo">
+                <a href="https://www.roblox.com/communities/32578828/SI-Sunset-Insurgency#!/about">Sunset Insurgency</a>
             </div>
             <div class="faction">
                 <img src="https://tr.rbxcdn.com/180DAY-7c601d9c8fbe76c1f43910cbfff5541c/150/150/Image/Webp/noFilter" alt="Fallen Mafia Logo">
                 <a href="https://www.roblox.com/communities/7704603/Fallen-Mafia#!/about">Fallen Mafia</a>
+            </div>
+        </div>
+
+        <!-- Enemies Section -->
+        <div class="faction-container active" id="enemy-container">
+            <div class="faction">
+                <img src="https://tr.rbxcdn.com/180DAY-0dc71758504a3063460086b8b29b0de8/150/150/Image/Webp/noFilter" alt="ReaperMah's British Army Logo">
+                <a href="https://discord.gg/BritishArmy">ReaperMah's British Army</a>
             </div>
         </div>
 
@@ -269,7 +276,7 @@
         </div>
     </div>
 
- <script>
+<script>
     let hasAccess = false; // Track if user has entered the password
     let eventList = document.getElementById('event-list');
 
