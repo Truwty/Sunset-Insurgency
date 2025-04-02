@@ -3,129 +3,205 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roblox Groups Overview</title>
+    <title>Sunset Insurgency</title>
     <style>
+        /* General Styles */
         body {
             font-family: Arial, sans-serif;
-            background-color: #1a1a1a;
-            color: #fff;
+            background-color: #121212;
+            color: white;
             margin: 0;
             padding: 0;
+            transition: background 0.3s ease-in-out, color 0.3s ease-in-out;
         }
-        header {
-            background: #333;
-            color: #FFD700; /* Gold */
-            padding: 10px 0;
-            text-align: center;
-        }
-        .tab {
+
+        /* Navigation Bar */
+        nav {
             display: flex;
-            justify-content: center;
-            background-color: #444;
-            border-bottom: 2px solid #FFD700; /* Gold */
+            justify-content: space-between;
+            background: #222;
+            padding: 15px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
         }
-        .tab button {
-            background-color: #333;
-            color: #FFD700; /* Gold */
-            border: none;
-            padding: 14px 20px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            font-size: 16px;
+
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+            color: gold;
         }
-        .tab button:hover {
-            background-color: #555;
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 15px;
         }
-        .tabcontent {
-            display: none;
-            padding: 20px;
-            background-color: #222;
-            animation: fadeIn 0.5s;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        .active {
-            display: block;
-        }
-        img {
-            max-width: 150px;
-            margin: 10px 0;
-        }
-        a {
-            color: #FFD700; /* Gold */
+
+        nav ul li a {
+            color: gold;
             text-decoration: none;
         }
-        a:hover {
-            text-decoration: underline;
-        }
-        footer {
+
+        /* Sections */
+        section {
+            padding: 60px 20px;
             text-align: center;
-            padding: 10px 0;
-            background: #333;
-            color: #FFD700; /* Gold */
-            position: relative;
-            bottom: 0;
-            width: 100%;
+        }
+
+        h1, h2 {
+            color: yellow;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: gold;
+            color: black;
+            text-decoration: none;
+            margin: 10px;
+            border-radius: 5px;
+        }
+
+        /* Dark Mode */
+        .dark-mode {
+            background-color: white;
+            color: black;
+        }
+
+        .dark-mode nav {
+            background: #ddd;
+        }
+
+        .dark-mode .btn {
+            background: black;
+            color: gold;
+        }
+
+        /* Image Gallery */
+        .gallery-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .gallery-container img {
+            width: 150px;
+            height: 150px;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .gallery-container img:hover {
+            transform: scale(1.1);
+        }
+
+        /* News Section */
+        #news-feed {
+            max-width: 600px;
+            margin: auto;
+            text-align: left;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 5px;
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
         }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>Roblox Groups Overview</h1>
-</header>
+    <!-- Navigation Bar -->
+    <nav>
+        <div class="logo">Sunset Insurgency</div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#join">Join Us</a></li>
+            <li><a href="#operations">Operations</a></li>
+            <li><a href="#news">News & Events</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button onclick="toggleDarkMode()">🌙</button>
+    </nav>
 
-<div class="tab">
-    <button class="tablinks" onclick="openTab(event, 'SunsetInsurgency')">Sunset Insurgency</button>
-    <button class="tablinks" onclick="openTab(event, 'FallenMafia')">Fallen Mafia</button>
-    <button class="tablinks" onclick="openTab(event, 'Enemies')">Enemies</button>
-</div>
+    <!-- Home Section -->
+    <section id="home">
+        <h1>Welcome to the Sunset Insurgency</h1>
+        <p>A rebellion force dedicated to the annihilation of the British Army.</p>
+        <a href="#join" class="btn">Join Us</a>
+    </section>
 
-<div id="SunsetInsurgency" class="tabcontent">
-    <h2>Sunset Insurgency</h2>
-    <img src="https://tr.rbxcdn.com/180DAY-696f26243315a3ee8edaf4f806d27c93/150/150/Image/Webp/noFilter" alt="Sunset Insurgency Logo">
-    <p><strong>Colors:</strong> Yellow, Gold, Black</p>
-    <p><strong>About:</strong> The Sunset Insurgency is a rebellion force dedicated to the complete annihilation of the British Army. Our primary target is Sandhurst Military Academy - their premier training and operations center.</p>
-    <p><strong>How to Join:</strong> All non-BA combat personnel can join. Simply join the group to gain team access. To get access to weaponry, you must rank up once!</p>
-    <p><strong>Group Link:</strong> <a href="https://www.roblox.com/communities/32578828/SI-Sunset-Insurgency#!/about" target="_blank">Join Sunset Insurgency</a></p>
-    <p><strong>Discord:</strong> "Prove yourself worthy of joining us"</p>
-</div>
+    <!-- Join Us Section -->
+    <section id="join">
+        <h2>How to Join</h2>
+        <p>Anyone can join! Simply join our group and Discord.</p>
+        <a href="https://www.roblox.com/communities/32578828/SI-Sunset-Insurgency#!/about" target="_blank" class="btn">Join the Group</a>
+        <a href="#" class="btn">Discord Server</a>
+    </section>
 
-<div id="FallenMafia" class="tabcontent">
-    <h2>Fallen Mafia</h2>
-    <img src="https://tr.rbxcdn.com/180DAY-7c601d9c8fbe76c1f43910cbfff5541c/150/150/Image/Webp/noFilter" alt="Fallen Mafia Logo">
-    <p><strong>About:</strong> The Fallen Mafia is an ally of the Sunset Insurgency.</p>
-    <p><strong>Group Link:</strong> <a href="https://www.roblox.com/communities/7704603/Fallen-Mafia#!/about" target="_blank">Join Fallen Mafia</a></p>
-    <p><strong>Discord :</strong> "Join us for exclusive updates and events!"</p>
-</div>
+    <!-- Operations Section -->
+    <section id="operations">
+        <h2>Our Operations</h2>
+        <p>We conduct raids, sabotage, and disrupt BA forces. Train in our hidden bases to rank up.</p>
+    </section>
 
-<div id="Enemies" class="tabcontent">
-    <h2>Enemies</h2>
-    <p><strong>Current Enemies:</strong> British Army, Sandhurst Military Academy</p>
-    <p><strong>Strategy:</strong> Engage in tactical warfare and espionage to undermine enemy operations.</p>
-</div>
+    <!-- News Section -->
+    <section id="news">
+        <h2>News & Events</h2>
+        <div id="news-feed">
+            <p>Loading latest news...</p>
+        </div>
+    </section>
 
-<footer>
-    <p>&copy; 2023 Roblox Groups Overview. All rights reserved.</p>
-</footer>
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery-container">
+            <img src="https://tr.rbxcdn.com/180DAY-696f26243315a3ee8edaf4f806d27c93/150/150/Image/Webp/noFilter" alt="Sunset Logo">
+            <img src="https://tr.rbxcdn.com/180DAY-7c601d9c8fbe76c1f43910cbfff5541c/150/150/Image/Webp/noFilter" alt="Fallen Mafia Logo">
+        </div>
+    </section>
 
-<script>
-    function openTab(evt, tabName) {
-        var i, tabcontent, tablinks;
-        tabcontent = document.getElementsByClassName("tabcontent");
-        for (i = 0; i < tabcontent.length; i++) {
-            tabcontent[i].style.display = "none";  
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>Connect with our allies or find out about our enemies.</p>
+        <a href="https://discord.gg/Cg7vXHnbCP" target="_blank" class="btn">Fallen Mafia Discord</a>
+        <a href="https://discord.gg/BritishArmy" target="_blank" class="btn">Enemies Discord</a>
+    </section>
+
+    <script>
+        // Dark Mode Toggle
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
         }
-        tablinks = document.getElementsByClassName("tablinks");
-        for (i = 0; i < tablinks.length; i++) {
-            tablinks[i].className = tablinks[i].className.replace(" active", "");
+
+        // Fake News Feed (You can later connect it to a real database)
+        const newsFeed = document.getElementById("news-feed");
+        const newsArticles = [
+            "🔥 Major raid on Sandhurst was a success! Over 50+ BA eliminated.",
+            "🚀 New tools released for high ranks, including explosive devices.",
+            "💀 ReaperMah spotted at Sandhurst, massive fight broke out!",
+            "🏴‍☠️ Sunset Insurgency now allies with Fallen Mafia!"
+        ];
+
+        function loadNews() {
+            newsFeed.innerHTML = "";
+            newsArticles.forEach(article => {
+                let p = document.createElement("p");
+                p.textContent = article;
+                newsFeed.appendChild(p);
+            });
         }
-        document.getElementById(tabName).style.display = "block";  
-        evt.currentTarget.className += " active";
-    }
-</script>
+
+        setTimeout(loadNews, 2000); // Simulate news loading
+    </script>
 
 </body>
 </html>
