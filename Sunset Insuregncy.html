@@ -30,13 +30,9 @@
             top: 0;
             width: 100%;
             padding: 15px;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.7);
             z-index: 1000;
             transition: background 0.3s ease-in-out;
-        }
-
-        header.scrolled {
-            background: rgba(0, 0, 0, 0.8);
         }
 
         .nav-links {
@@ -59,7 +55,7 @@
 
         /* Hero Section */
         .hero {
-            background: url('https://example.com/your-background-image.jpg') no-repeat center center/cover;
+            background: url('https://tr.rbxcdn.com/180DAY-696f26243315a3ee8edaf4f806d27c93/150/150/Image/Webp/noFilter') no-repeat center center/cover;
             height: 100vh;
             display: flex;
             flex-direction: column;
@@ -99,74 +95,48 @@
             transform: scale(1.05);
         }
 
-        /* Sections */
+        /* Main Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 20px 20px;
+        }
+
+        /* Section Styles */
         .section {
-            padding: 80px 20px;
+            margin: 40px 0;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+        }
+
+        .section h2 {
+            margin-bottom: 20px;
             text-align: center;
-            min-height: 100vh;
+        }
+
+        /* About Section */
+        .about-section {
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            align-items: center;
         }
 
-        /* Join Us Form */
-        .join-form {
-            max-width: 600px;
-            margin: 0 auto;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 20px;
-            border-radius: 10px;
+        .about-section h2 {
+            margin-bottom: 20px;
         }
 
-        .join-form input {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: none;
-            border-radius: 5px;
-        }
-
-        .join-form button {
-            background-color: #ffcc00;
-            color: #121212;
-            border: none;
-            padding: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .join-form button:hover {
-            background-color: #ff9900;
-        }
-
-        /* Operations Section */
-        .operations {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            margin-top: 40px;
-        }
-
-        .operation-card {
-            background-color: rgba(0, 0, 0, 0.7);
-            border-radius: 10px;
-            padding: 20px;
-            width: 300px;
-            transition: transform 0.3s ease;
-        }
-
-        .operation-card:hover {
-            transform: scale(1.05);
+        .about-section p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
         }
 
         /* Enemies and Allies Section */
         .faction-section {
             display: flex;
-            justify-content: center;
             align-items: center;
-            margin: 40px 0;
+            margin: 20px 0;
             background: rgba(0, 0, 0, 0.7);
             padding: 20px;
             border-radius: 10px;
@@ -174,8 +144,7 @@
 
         .faction-logo {
             width: 100px;
-            margin-right: 20px;
-        }
+            margin-right: 20px }
 
         /* Calendar Section */
         .calendar {
@@ -262,6 +231,19 @@
             cursor: pointer;
             z-index: 1001;
         }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .operation-card {
+                width: calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .operation-card {
+                width: 100%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -285,83 +267,97 @@
     <a href="https://www.roblox.com/communities/32578828/SI-Sunset-Insurgency#!/about" class="btn">Join Us</a>
 </section>
 
-<section class="section" id="join">
-    <h2>Join Us</h2>
-    <div class="join-form">
-        <input type="text" placeholder="Your Name" required>
-        <button type="submit">Apply Now</button>
-    </div>
-</section>
-
-<section class="section" id="operations">
-    <h2>Current Operations</h2>
-    <div class="operations">
-        <div class="operation-card">
-            <h3>Operation Alpha</h3>
-            <p>Details about Operation Alpha.</p>
+<div class="container">
+    <section class="section" id="about">
+        <h2>About Us</h2>
+        <div class="about-section">
+            <p>The Sunset Insurgency is a rebellion force dedicated to the complete annihilation of the British Army. Our primary target is Sandhurst Military Academy - their premier training and operations center.</p>
+            <p>Why join Sunset Insurgency? Anyone can join, including BA personnel and BA High Ranks! No tryouts needed! We strive to reflect the values of STRONGER TOGETHER! This means respect, sportsmanship, and teamwork.</p>
         </div>
-        <div class="operation-card">
-            <h3>Operation Beta</h3>
-            <p>Details about Operation Beta.</p>
+    </section>
+
+    <section class="section" id="join">
+        <h2>Join Us</h2>
+        <div class="join-form">
+            <input type="text" placeholder="Your Name" required>
+            <button type="submit" class="btn">Apply Now</button>
         </div>
-    </div>
-</section>
+    </section>
 
-<section class="section" id="enemies">
-    <h2>Enemies</h2>
-    <div class="faction-section">
-        <img src="https://example.com/enemy-logo.jpg" alt="Enemy Logo" class="faction-logo">
-        <p>Description of the enemy faction.</p>
-    </div>
-</section>
-
-<section class="section" id="allies">
-    <h2>Allies</h2>
-    <div class="faction-section">
-        <img src="https://example.com/ally-logo.jpg" alt="Ally Logo" class="faction-logo">
-        <p>Description of the ally faction.</p>
-    </div>
-</section>
-
-<section class="section" id="calendar">
-    <h2>Event Calendar</h2>
-    <div class="calendar">
-        <input type="text" placeholder="Enter password to view events" id="calendar-password">
-        <button onclick="checkPassword()">View Events</button>
-        <div id="event-list" style="display:none;">
-            <h3>Upcoming Events</h3>
-            <p>No events scheduled.</p>
+    <section class="section" id="operations">
+        <h2>Current Operations</h2>
+        <div class="operations">
+            <div class="operation-card">
+                <h3>Operation Alpha</h3>
+                <p>Details about Operation Alpha.</p>
+            </div>
+            <div class="operation-card">
+                <h3>Operation Beta</h3>
+                <p>Details about Operation Beta.</ p>
+            </div>
+            <div class="operation-card">
+                <h3>Operation Gamma</h3>
+                <p>Details about Operation Gamma.</p>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section class="section" id="gallery">
-    <h2>Gallery</h2>
-    <div class="gallery">
-        <img src="https://example.com/image1.jpg" alt="Operation Image 1">
-        <img src="https://example.com/image2.jpg" alt="Operation Image 2">
-    </div>
-</section>
+    <section class="section" id="enemies">
+        <h2>Enemies</h2>
+        <div class="faction-section">
+            <img src="https://tr.rbxcdn.com/180DAY-0dc71758504a3063460086b8b29b0de8/150/150/Image/Webp/noFilter" alt="ReaperMah's British Army Logo" class="faction-logo">
+            <p>ReaperMah's British Army - Our primary adversary.</p>
+        </div>
+    </section>
 
-<section class="section" id="news">
-    <h2>Latest News</h2>
-    <div class="news">
-        <div class="news-item">
-            <h4>New Operation Scheduled</h4>
-            <p>Details about the new operation.</p>
+    <section class="section" id="allies">
+        <h2>Allies</h2>
+        <div class="faction-section">
+            <img src="https://tr.rbxcdn.com/180DAY-7c601d9c8fbe76c1f43910cbfff5541c/150/150/Image/Webp/noFilter" alt="Fallen Mafia Logo" class="faction-logo">
+            <p>Fallen Mafia - Our trusted allies in the fight.</p>
         </div>
-        <div class="news-item">
-            <h4>Join Us for Training</h4>
-            <p>Details about the upcoming training session.</p>
+    </section>
+
+    <section class="section" id="calendar">
+        <h2>Event Calendar</h2>
+        <div class="calendar">
+            <input type="text" placeholder="Enter password to view events" id="calendar-password">
+            <button onclick="checkPassword()">View Events</button>
+            <div id="event-list" style="display:none;">
+                <h3>Upcoming Events</h3>
+                <p>No events scheduled.</p>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
+
+    <section class="section" id="gallery">
+        <h2>Gallery</h2>
+        <div class="gallery">
+            <img src="https://example.com/image1.jpg" alt="Operation Image 1">
+            <img src="https://example.com/image2.jpg" alt="Operation Image 2">
+        </div>
+    </section>
+
+    <section class="section" id="news">
+        <h2>Latest News</h2>
+        <div class="news">
+            <div class="news-item">
+                <h4>New Operation Scheduled</h4>
+                <p>Details about the new operation.</p>
+            </div>
+            <div class="news-item">
+                <h4>Join Us for Training</h4>
+                <p>Details about the upcoming training session.</p>
+            </div>
+        </div>
+    </section>
+</div>
 
 <button class="toggle-button" onclick="toggleMode()">Toggle Dark/Light Mode</button>
 
 <footer>
     <p>&copy; 2023 Sunset Insurgency. All rights reserved.</p>
-    <p>Join our groups: <a href="https://www.roblox.com/communities/32578828/SI-Sunset-Ins urgency#!/about">Sunset Group</a> | <a href="https://www.roblox.com/communities/7704603/Fallen-Mafia#!/about">Fallen Mafia</a></p>
+    <p>Join our groups: <a href="https://www.roblox.com/communities/32578828/SI-Sunset-Insurgency#!/about">Sunset Group</a> | <a href="https://www.roblox.com/communities/7704603/Fallen-Mafia#!/about">Fallen Mafia</a></p>
     <p>Discord Links: <a href="https://discord.gg/Cg7vXHnbCP">Fallen Mafia Discord</a> | <a href="https://discord.gg/BritishArmy">Enemies Discord</a></p>
 </footer>
 
